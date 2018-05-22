@@ -1,0 +1,10 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.canvas {
+    border: 8px solid #663333;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto;
+}

@@ -16,6 +16,7 @@ pipeBottom.src = 'img/pipeBottom.png';
 
 // Tap on any button
 document.addEventListener('keydown', moveUp);
+document.addEventListener('touchstart', moveUp);
 
 function moveUp() {
     yPos -= 25;
@@ -61,12 +62,13 @@ function draw() {
             });
         }
 
+        //  Touch tracking
         if(xPos + bird.width >= pipe[i].x
             && xPos <= pipe[i].x + pipeUp.width
             && (yPos <= pipe[i].y + pipeUp.height
                 || yPos + bird.height >= pipe[i].y + pipeUp.height + gap)
             || yPos >= cvs.height - fg.height) {
-            location.reload();
+            location.reload(); // Page reload
         }
 
         if(pipe[i].x == 5) {
@@ -78,8 +80,8 @@ function draw() {
     ctx.drawImage(fg, 0, cvs.height - fg.height);
     ctx.drawImage(bird, xPos, yPos);
 
-    ctx.fillStyle = '#000';
-    ctx.font = '24px PT Sans';
+    ctx.fillStyle = '#663333';
+    ctx.font = '26px Georgia';
     ctx.fillText('Score ' + score, 100, cvs.height - 20);
 
     yPos +=grav;
