@@ -13,11 +13,13 @@ fg.src = 'img/fg.png';
 pipeUp.src = 'img/pipeUp.png';
 pipeBottom.src = 'img/pipeBottom.png';
 
+
 // Tap on any button
 document.addEventListener('keydown', moveUp);
 
 function moveUp() {
     yPos -= 25;
+    fly.play();
 }
 
 // Creating blocks
@@ -32,8 +34,15 @@ pipe[0] = {
 var gap = 100;
 var xPos = 10;
 var yPos = 150;
-var grav = 1.4;
+var grav = 1.5;
 var score = 0;
+
+
+var fly = new Audio();
+var score_audio = new Audio;
+
+fly.src = 'audio/fly.mp3';
+score_audio.src = 'audio/score.mp3';
 
 function draw() {
     ctx.drawImage(bg, 0, 0);
@@ -48,7 +57,7 @@ function draw() {
         if(pipe[i].x == 125) {
             pipe.push({
                 x: cvs.width,
-                y: Math.floor(Math.random() * pipeUp.height) - pipeUp.height
+                y: Math.floor(Math.random() * 0.50 * pipeUp.height) - pipeUp.height
             });
         }
 
@@ -62,6 +71,7 @@ function draw() {
 
         if(pipe[i].x == 5) {
             score++;
+            score_audio.play();
         }
     }
 
@@ -69,7 +79,7 @@ function draw() {
     ctx.drawImage(bird, xPos, yPos);
 
     ctx.fillStyle = '#000';
-    ctx.font = '24px Helvetica';
+    ctx.font = '24px PT Sans';
     ctx.fillText('Score ' + score, 100, cvs.height - 20);
 
     yPos +=grav;
