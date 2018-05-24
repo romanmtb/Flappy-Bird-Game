@@ -1,5 +1,11 @@
 /* eslint-disable eqeqeq,no-plusplus,no-restricted-globals,no-mixed-operators,no-undef,no-use-before-define,no-var,vars-on-top */
-console.log('game.js');
+import birdSrc from '../img/bird.png';
+import bgSrc from '../img/bg.png';
+import fgSrc from '../img/fg.png';
+import pipeUpSrc from '../img/pipeUp.png';
+import pipeBottomSrc from '../img/pipeBottom.png';
+
+console.log('game.js has been included');
 
 // just for test
 
@@ -12,11 +18,11 @@ const fg = new Image();
 const pipeUp = new Image();
 const pipeBottom = new Image();
 
-bird.src = '../img/bird.png';
-bg.src = 'img/bg.png';
-fg.src = 'img/fg.png';
-pipeUp.src = 'img/pipeUp.png';
-pipeBottom.src = 'img/pipeBottom.png';
+bird.src = birdSrc;
+bg.src = bgSrc;
+fg.src = fgSrc;
+pipeUp.src = pipeUpSrc;
+pipeBottom.src = pipeBottomSrc;
 
 
 // Tap on any button
