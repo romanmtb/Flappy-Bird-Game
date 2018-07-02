@@ -102,4 +102,4 @@ function draw() {
 }
 
 pipeBottom.onload = draw();
-
+console.log( bird );
